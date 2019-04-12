@@ -1,0 +1,78 @@
+<view class="container">
+	<block wx:if="{{userInfo == null}}">
+		<view class="content-notice">
+			太仆洗车需要您的授权来提供相信的信息服务
+		</view>
+        <button class="author-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">前往授权</button>
+	</block>
+
+    <block wx:else>
+        <view class="info-box">
+            <view class="flex-box">
+                <image bindtap="toFeedback" class="icon1 feedback flex-item" src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/btn_feedback.png" mode="widthFix"></image>
+                <image src="{{avatar ? avatar : 'http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/avatar_default.png'}}"  model="aspectFill" lazy-load="true" mode="" class="avatar"></image>
+                <image bindtap="toAboutUs" class="icon1 aboutus flex-item" src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/btn_aboutus.png" mode="widthFix"></image>
+                
+            </view>
+            <view class="name">
+                <text>ID:{{userId}}</text>
+                <text>  {{name}}</text>
+            </view>
+        </view>
+
+        <!-- 订单列表 -->
+        <view>
+            <block wx:if="{{orderArray == null}}">
+                <view class="content-notice">
+                    <text>加载数据，请稍候</text>
+                </view>
+            </block>
+
+            <block wx:else>
+                <block wx:if="{{orderArray.length == 0}}">
+                    <view class="noOrder">
+                        <image src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/image_noorder.png"></image>
+                        <view>暂无订单</view>
+                    </view>
+                </block>
+
+                <block wx:else>
+                    <view class="list">
+                        <block wx:for="{{orderArray}}" wx:key="order-list">
+                            <view class="item" bindtap="orderChoose" id="{{item.id}}">
+
+                                <view class="left">
+                                    <view class="price">￥{{item.amountStr}}</view>
+                                    <view class="time">{{item.payTimeStr}}</view>
+                                </view>
+
+                                <view class="right">
+                                    <view class="name">
+                                        {{item.terTitle}}
+                                    </view>
+                                    <view class="addr">{{item.terTitle}}</view>
+                                </view>
+
+                                <view class="status">
+                                    <block wx:if="{{!item.operation}}">
+                                        <image src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/label_payed.png"></image>
+                                    </block>
+                                    <block wx:elif="{{item.operation}}">
+                                        <image src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/label_finished.png"></image>
+                                    </block>
+                                </view>
+                                
+                            </view>
+                        </block>
+                    </view>
+
+                    <view class="moreText" bindtap="getMoreOrder" wx:if="{{hasMoreData}}">点击加载更多</view>
+                    <view class="moreText" wx:else>—— 无更多订单 ——</view>
+                </block>
+            </block>
+        </view>
+
+        <!-- 点击拨打客服电话 -->
+        <image class="phoneCallBtn" bindtap="phoneCall" src="../../images/iconPhone.png"></image>
+    </block>
+</view>

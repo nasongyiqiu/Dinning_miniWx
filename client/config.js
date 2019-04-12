@@ -5,6 +5,8 @@
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = 'https://123456.qcloud.la';
 
+var sysHost = "https://sys.songna.top:9090";
+
 var config = {
 
     // 下面的地址配合云端 Demo 工作
@@ -22,6 +24,17 @@ var config = {
 
         // 上传图片接口
         uploadUrl: `${host}/weapp/upload`
+    },
+
+    sysService: {
+        sysHost,
+
+      //用户登陆
+      loginUrl: `${sysHost}/api/open/wx/user/login`,
+
+      //菜系展示
+
+      //菜品展示
     }
 };
 
