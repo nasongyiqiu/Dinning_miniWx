@@ -38,7 +38,7 @@ Page({
         that.setData({
             userId: app.data.userId
         })
-        that.getOrderList()
+        //that.getOrderList()
     },
 
     /**
@@ -59,7 +59,7 @@ Page({
         })
     },
 
-    getOrderList: function() {
+    /*getOrderList: function() {
         let that = this
         let args = {
             userId: app.data.userId,
@@ -116,7 +116,7 @@ Page({
         wx.navigateTo({
             url:"../sabis/sabis"
         });
-    },
+    },*/
 
     showAgreement: function () {
         wx.navigateTo({
@@ -142,19 +142,19 @@ Page({
         )
     },
 
-    toFeedback: function() {
+    /*toFeedback: function() {
         wx.navigateTo({
           // url:"../cardApply/cardApply?exCardId=105"
             url: "../feedback/feedback?orderId=0"
         });
-    },
+    },*/
     toAboutUs: function() {
         wx.navigateTo({
             url:"../aboutUs/aboutUs"
         });
     },
 
-    orderChoose: function(event) {
+    /*orderChoose: function(event) {
         let orderId = event.currentTarget.id
         let orderArray = this.data.orderArray
         let orderChoose = null
@@ -172,7 +172,7 @@ Page({
                 url:"../orderDetail/orderDetail?orderId=" + orderId
             });
         }
-    },
+    },*/
     phoneCall: function() {
         netManager.makePhoneCall(app.data.kefuPhoneNumber)
     }

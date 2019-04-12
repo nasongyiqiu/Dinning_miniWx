@@ -10,7 +10,7 @@ let getUnionIdWithCode = (code, successCallBack, failCallBack) => {
 	}
 	console.log('wx.code->', code)
 	wx.request({
-		url: config.tpService.unionIdUel + '?code=' + code,
+		url: config.sysService.unionIdUel + '?code=' + code,
 		method: 'POST',
 		success: function(res) {
 			console.log('get unionid res->' ,res)
@@ -37,7 +37,7 @@ var login = (openid, unionid, successCallBack , failCallBack) => {
 		failCallBack()
 	}
     wx.request({
-        url: config.tpService.loginUrl,
+        url: config.sysService.loginUrl,
         data: {
             wxMiniId: openid,
             wxUnionId: unionid,
@@ -694,7 +694,7 @@ var updateCardPossessState = (id, userId, successCallBack, failCallBack) => {
 
 // 用户信息记录说明
 var checkUserInfo = (info, successCallBack, failCallBack) => {
-	const url = config.tpService.checkInfoUrl
+	const url = config.sysService.checkInfoUrl
 	wx.request({
 		url: url,
 		data: info,

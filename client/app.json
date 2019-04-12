@@ -1,15 +1,12 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/index/index",
-    "pages/chat/chat",
-    "pages/aboutUs/aboutUs",
+    "pages/user/user"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#333",
+    "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "小程序",
+    "backgroundColor": "#F6F6F6",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

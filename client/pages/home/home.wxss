@@ -1,0 +1,318 @@
+.content {
+	position: relative;
+	padding-bottom: 300rpx;
+	/* background: #e6e6e6; */
+	background: #fff;
+}
+
+.banner {
+	width: 100%;
+}
+.banner image {
+	width: 100%;
+}
+
+.title-img {
+	width: 290rpx;
+	height: 81rpx;
+	margin: 80rpx auto 50rpx;
+}
+.title-img image {
+	width: 100%;
+	height: 100%;
+}
+
+.step {
+	margin-bottom: -2rpx;
+}
+
+.step .step-num {
+	display: inline-block;
+	width: 50rpx;
+	height: 50rpx;
+	margin-left: 23rpx;
+	margin-right: 15rpx;
+	background: #2981ff;
+	text-align: center;
+	line-height: 50rpx;
+	color: #fff;
+	border-radius: 50%;
+}
+.step .step-text {
+	color: #333;
+	font-size: 32rpx;
+}
+.step .step-img {
+	width: 648rpx;
+	margin: 0 auto;
+	padding: 25rpx 0 50rpx 8rpx;
+	border-left: 4rpx solid #2981ff;
+}
+.step .step-img.last {
+	padding-bottom: 0;
+}
+.step .step-img image {
+	width: 100%;
+	/* height: 100%; */
+}
+
+.tips-title {
+	width: 670rpx;
+	margin: 30rpx auto 40rpx;
+	font-size: 30rpx;
+	color: #333;
+	display: flex;
+	justify-content: space-between;
+}
+.tips-title .line {
+	width: 238rpx;
+	height: 2rpx;
+	background: #ccc;
+	margin-top: 20rpx;
+}
+
+.tip-step {
+	width: 660rpx;
+	margin: 0 auto 10rpx;
+	font-size: 26rpx;
+	color: #666;
+}
+
+.phone-box {
+	width: 400rpx;
+	height: 56rpx;
+	margin: 78rpx auto 0;
+	border: 2rpx solid #999;
+	border-radius: 10rpx;
+	font-size: 26rpx;
+	color: #333;
+	line-height: 56rpx;
+	text-align: center;
+}
+.phone-box image {
+	width: 28rpx;
+	height: 28rpx;
+}
+.phone-box .phone-text {
+	line-height: 56rpx;
+	padding-left: 10rpx;
+}
+
+
+
+.phone {
+	font-family: DINAlternate-Bold;
+	width: 320rpx;
+	height: 58rpx;
+	margin: 0 auto;
+	text-align: center;
+	border: 4rpx solid #ccc;
+	border-radius: 10rpx;
+	line-height: 58rpx;
+}
+
+.btns {
+	position: fixed;
+	width:  100%;
+	height: 180rpx;
+	bottom: 50rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.icon1 {
+	width: 145rpx;
+	height: 145rpx;
+	margin-top:  21rpx;
+}
+.icon2 {
+	width: 180rpx;
+	height: 180rpx;
+	margin: 0 22rpx;
+}
+
+
+.content-notice {
+	margin-top: 60rpx;
+	font-size: 26rpx;
+	color: #666;
+	text-align: center;
+}
+.terList {
+	margin-top: 50rpx;
+}
+.item {
+	width: 100%;
+	height: 108rpx;
+	margin-bottom: 27rpx;
+	/* background: #aaa; */
+
+}
+.item .ter-cover {
+	width: 108rpx;
+	height: 108rpx;
+	border-radius: 10rpx;
+	margin: 0 28rpx 24rpx 40rpx;
+	float: left;
+}
+.item .ter-cover image {
+	width: 100%;
+	height: 100%;
+	border-radius: 10rpx;
+}
+
+
+
+.item .right {
+	width: 512rpx;
+	height: 108rpx;
+	float: left;
+	display: inline-block;
+	position: relative;
+	/* margin-left: ; */
+}
+.item .ter-name {
+	font-size: 32rpx;
+	color: #00203c;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+
+}
+
+.item .ter-name .label-box {
+	color: #fff;
+	border-radius: 4rpx;
+	display: inline-block;
+	font-size: 20rpx;
+	text-align: center;
+	line-height: 25rpx;
+	margin-bottom: 8rpx;
+	vertical-align: middle;
+	height: 25rpx;
+    margin-left: 20rpx;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+}
+.item .ter-name .contract {
+	background: #32b661;
+	width: 50rpx;
+}
+
+.item .ter-name .offline {
+	background: #ff6323;
+	width: 100rpx;
+}
+
+
+.ter-address {
+	margin-top: 10rpx;
+	font-size: 26rpx;
+	color: #999;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.ter-line {
+	width: 512rpx;
+	height: 2rpx;
+	background-color: #eee;
+	position: absolute;
+	bottom: 0;
+	/* float: left;
+	margin-left: 216rpx; */
+}
+.online-notice {
+	font-size: 20rpx;
+	color: #FF3C23;
+}
+
+.dropDownMenuBox {
+	width: 694rpx;
+	height: 80rpx;
+	margin: 0 auto;
+	/* padding-bottom: 18rpx; */
+	border-bottom: 2rpx solid #eee;
+	/* position: absolute; */
+	/* top: 420rpx; */
+	/* left: 40rpx; */
+
+}
+.dropDownMenuBox .cityNameBox image.down {
+	width: 44rpx;
+	height: 44rpx;
+	margin-left: 10rpx;
+	position: relative;
+	top: 12rpx;
+}
+.dropDownMenuBox .cityNameBox image.location {
+	width: 40rpx;
+	height: 42rpx;
+	position: relative;
+	top: 12rpx;
+}
+.dropDownMenuBox .cityNameBox text {
+	color: #333;
+	font-size: 30rpx;
+	margin-left: 20rpx;
+}
+.dropDownMenuBox .dropDownMenu {
+	width: 200rpx;
+	/* height: 300rpx; */
+	/* overflow-y: scroll; */
+	padding: 0 20rpx;
+	position: relative;
+	z-index: 10;
+	left: 100rpx;
+	top: 20rpx;
+	border-radius: 4rpx;
+	background: #eee;
+}
+.dropDownMenuBox .dropDownMenu  .topTriangle {
+	width: 0rpx;
+	height: 0rpx;
+	border-bottom: 20rpx solid #eee;
+	border-left: 20rpx solid transparent;
+	border-right: 20rpx solid transparent;
+	position: relative;
+	top: -20rpx;
+	left: 38rpx;
+}
+.dropDownMenuBox .dropDownMenu .eachCity {
+	height: 68rpx;
+	text-align: center;
+	font-size: 30rpx;
+	color: #3e3e3e;
+	line-height: 68rpx;
+	/* background: #c7cacc; */
+	border-bottom: 1rpx solid #c7cacc;
+}
+.dropDownMenuBox .dropDownMenu .eachCity:last-child {
+	border-bottom: none;
+}
+
+.phoneIcon {
+	width: 100rpx;
+	height: 100rpx;
+	position: fixed;
+	bottom: 300rpx;
+	right: 50rpx;
+	border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

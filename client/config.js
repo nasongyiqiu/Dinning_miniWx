@@ -31,10 +31,14 @@ var config = {
 
       //用户登陆
       loginUrl: `${sysHost}/api/open/wx/user/login`,
+      checkInfoUrl: `${sysHost}/user/info/check`,
+      unionIdUel: `${sysHost}/api/open/wx/auth`,
 
       //菜系展示
+      foodKindSerachUrl: `${sysHost}/api/open/wx/food/kindlist`,
 
       //菜品展示
+      foodDetailSearchUrl: `${sysHost}/api/open/wx/food/detail/list`,
     }
 };
 

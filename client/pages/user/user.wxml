@@ -1,7 +1,7 @@
 <view class="container">
 	<block wx:if="{{userInfo == null}}">
 		<view class="content-notice">
-			太仆洗车需要您的授权来提供相信的信息服务
+			好韵味需要您的授权来提供相信的信息服务
 		</view>
         <button class="author-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">前往授权</button>
 	</block>
