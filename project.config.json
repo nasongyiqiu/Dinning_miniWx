@@ -51,7 +51,13 @@
 					"name": "我的",
 					"pathName": "pages/user/user",
 					"scene": null
-				}
+				},
+        {
+          "id": -1,
+          "name": "关于我们",
+          "pathName": "pages/aboutUs/aboutUs",
+          "query": ""
+        },
 			]
 		}
 	}

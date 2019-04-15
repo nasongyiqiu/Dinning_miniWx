@@ -116,7 +116,7 @@ App({
           console.log('app.authorUserInfo->success:', res)
           console.log('app.authorUserInfo->success:', that.data.userId)
           that.data.userInfo = res.userInfo
-          that.checkInfo()
+          //that.checkInfo()
 
           if (successCallBack) {
             successCallBack()

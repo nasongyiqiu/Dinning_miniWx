@@ -21,7 +21,7 @@
         </view>
 
         <!-- 订单列表 -->
-        <view>
+        <!-- <view>
             <block wx:if="{{orderArray == null}}">
                 <view class="content-notice">
                     <text>加载数据，请稍候</text>
@@ -70,7 +70,7 @@
                     <view class="moreText" wx:else>—— 无更多订单 ——</view>
                 </block>
             </block>
-        </view>
+        </view> -->
 
         <!-- 点击拨打客服电话 -->
         <image class="phoneCallBtn" bindtap="phoneCall" src="../../images/iconPhone.png"></image>

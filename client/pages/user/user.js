@@ -142,12 +142,12 @@ Page({
         )
     },
 
-    /*toFeedback: function() {
+    toFeedback: function() {
         wx.navigateTo({
           // url:"../cardApply/cardApply?exCardId=105"
             url: "../feedback/feedback?orderId=0"
         });
-    },*/
+    },
     toAboutUs: function() {
         wx.navigateTo({
             url:"../aboutUs/aboutUs"
