@@ -10,7 +10,7 @@ const util = require('./utils/util.js');
 
 var globalData = {
   userInfo: {},
-  tpUserID: 0
+  sysUserID: 0
 }
 
 
@@ -28,7 +28,7 @@ App({
         cardCnt: 0,
         ticketCnt: 0,
         homeCallback: null,
-        kefuPhoneNumber: '400-182-8511'
+        kefuPhoneNumber: '18839159126'
     },
     onLaunch: function () {
       this.wxLogin()
@@ -95,15 +95,15 @@ App({
                 that.data.homeCallback(info.needGuide)
               }
 
-              that.checkInfo()
+              //that.checkInfo()
 
               console.log('登录太仆之后的数据。。。', that.data)
             } else {
-              console.log('tp.login->info->userId = 0')
+              console.log('sys.login->info->userId = 0')
             }
           },
           function (error) {
-            console.log('tp.login->info->fail', error)
+            console.log('sys.login->info->fail', error)
           }
         )
       }
@@ -116,7 +116,7 @@ App({
           console.log('app.authorUserInfo->success:', res)
           console.log('app.authorUserInfo->success:', that.data.userId)
           that.data.userInfo = res.userInfo
-          // that.checkInfo()
+          that.checkInfo()
 
           if (successCallBack) {
             successCallBack()
