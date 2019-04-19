@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/user/user",
-    "pages/aboutUs/aboutUs"
+    "pages/aboutUs/aboutUs",
+    "pages/agreement/agreement"
   ],
   "window": {
     "backgroundTextStyle": "dark",
