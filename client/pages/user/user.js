@@ -45,6 +45,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        console.log("page(user).onReady with userInfo:", app.data)
         let that = this
         const userInfo = app.data.userInfo
         if (userInfo) {
@@ -54,6 +55,7 @@ Page({
                 name: userInfo.nickName 
             })
         }
+      console.log("我我我我哦:", app.data)
         wx.setNavigationBarTitle({
             title: '我的'
         })
@@ -90,6 +92,11 @@ Page({
         wx.navigateTo({
             url:"../aboutUs/aboutUs"
         });
+    },
+    toFeedback: function () {
+      wx.navigateTo({
+        url: "../feedback/feedback?orderId=0"
+      });
     },
 
     

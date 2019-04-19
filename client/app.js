@@ -85,11 +85,10 @@ App({
       } else {
         netManager.login(oid, uid,
           function (info) {
-            console.log('tp.login->info', info)
+            console.log('sys.login->info', info)
             if (info.id > 0) {
               that.data.userId = info.id
-              //that.data.ticketCnt = info.ticketCnt
-              //that.data.cardCnt = info.cardCnt
+              console.log('sys.login->id', that.data.userId)
 
               if (that.data.homeCallback) {
                 that.data.homeCallback(info.needGuide)
@@ -116,7 +115,7 @@ App({
           console.log('app.authorUserInfo->success:', res)
           console.log('app.authorUserInfo->success:', that.data.userId)
           that.data.userInfo = res.userInfo
-          //that.checkInfo()
+          that.checkInfo()
 
           if (successCallBack) {
             successCallBack()

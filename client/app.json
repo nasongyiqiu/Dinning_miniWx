@@ -2,7 +2,8 @@
   "pages": [
     "pages/user/user",
     "pages/aboutUs/aboutUs",
-    "pages/agreement/agreement"
+    "pages/agreement/agreement",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "dark",
