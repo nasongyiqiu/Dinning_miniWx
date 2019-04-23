@@ -1,0 +1,19 @@
+<view class="container">
+	<view class="top-box">
+		<image src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/bg_blue_aboutus.png" mode="widthFix"></image>
+		<image class="logo" src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/logo_darkblue.png"></image>
+		<view class="text">好韵味</view>
+	</view>
+	
+	<view class="title">好韵味餐厅version1.0.0</view>
+	<view class="desc">专业资格</view>
+	<view class="desc">打造品牌让用餐充满更多乐趣和便捷</view>
+	<view class="desc">打破以往传统点餐观念</view>
+	<view class="desc">好韵味餐厅打造智慧生活</view>
+	
+	<view class="slogon">让生活更美好</view>
+	<view class="agreement" bindtap="toAgreement">《好韵味餐厅服务协议》</view>
+	
+	<!-- 点击拨打客服电话 -->
+	<image class="phoneCallBtn" bindtap="phoneCall" src="../../images/iconPhone.png"></image>
+</view>
