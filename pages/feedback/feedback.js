@@ -109,7 +109,8 @@ Page({
 
         let feedback = {}
         feedback.orderId = this.data.orderId
-        feedback.userId = app.globalData.userId
+        //feedback.userId = app.globalData.userId
+        feedback.userId = 1
         feedback.type = this.data.type
         feedback.phone = this.data.phone
         feedback.msg = this.data.msg

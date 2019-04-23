@@ -37,6 +37,7 @@ Page({
       }
     })
     if (app.globalData.userInfo) {
+      console.log(userInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -63,6 +64,14 @@ Page({
       })
     }
   },
+
+  //这里也是我新加的
+  onShow: function () {
+    wx.setNavigationBarTitle({
+      title: '我的'
+    })
+  }, 
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -71,7 +80,6 @@ Page({
       hasUserInfo: true
     })
 
-    console.log(userInfo)
   },
 
     
