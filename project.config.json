@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wxb78192dd3e9ed90a",
-	"projectname": "Dinning_xcx",
+	"projectname": "Dinning_miniWx",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
