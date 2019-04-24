@@ -53,13 +53,18 @@ Page({
 
   getUserInfo: function(e) {
     // console.log("这里我获取到")
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+    
+    // app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       avatar: e.detail.userInfo.avatarUrl,
       name: e.detail.userInfo.nickName,
       hasUserInfo: true
+    });
+    console.log(e, this.data.avatar)
+    wx.request({
+      url: 'https://sys.songna.top:9090/api/open/wx/user/info/check',
+      data:{avatar:e.detail.userI}
     })
 
   },
