@@ -25,17 +25,18 @@ Page({
     
     var _this = this;
     app.getOpenid().then(function(res){
-      console.log(res)
+      // console.log(res)
       if(res.code == "200"){
         wx.request({
           url: 'https://sys.songna.top:9090/api/open/wx/user/login',
           data: { wxMiniId: res.data.openid },
           method: "POST",
           success(data) {
-            console.log(data.data.data.id)
+            // console.log(data.data.data.id)
             _this.setData({
               id:data.data.data.id
             })
+            
           }
         })
       }
@@ -53,7 +54,9 @@ Page({
 
   getUserInfo: function(e) {
     // console.log("这里我获取到")
-    
+    wx.switchTab({
+      url: '../user/user',
+    })
     // app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
