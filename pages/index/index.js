@@ -64,7 +64,7 @@ Page({
     console.log(e, this.data.avatar)
     wx.request({
       url: 'https://sys.songna.top:9090/api/open/wx/user/info/check',
-      data: { avatar: this.data.avatar, city: e.detail.userInfo.city, country: e.detail.userInfo.country, gender: e.detail.userInfo.gender, language: e.detail.userInfo.language, nickName: this.data.name, peovince: e.detail.userInfo.province,userId:this.data.id},
+      data: { avatar: this.data.avatar, city: e.detail.userInfo.city, country: e.detail.userInfo.country, gender: e.detail.userInfo.gender, language: e.detail.userInfo.language, nickname: this.data.name, province: e.detail.userInfo.province,userId:this.data.id},
       method:'post',
       success:function(data){
         console.log(data);
