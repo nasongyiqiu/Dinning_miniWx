@@ -8,7 +8,8 @@ Page({
     id:'',
     motto: 'Hello World',
     userInfo: '',
-    name:'',
+    avatar: null,
+    name: null,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     
@@ -92,10 +93,14 @@ Page({
   }, 
 
   getUserInfo: function(e) {
+
+    console.log("这里我获取到")
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
+      avatar: e.detail.userInfo.avatarUrl,
+      name: e.detail.userInfo.nickName,
       hasUserInfo: true
     })
 
