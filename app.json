@@ -18,19 +18,25 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#bfbfbf",
-    "selectedColor": "#d81e06",
+    "selectedColor": "#0829e7",
     "list": [
       {
         "pagePath": "pages/cart/cart",
-        "text": "购物车"
+        "text": "购物车",
+        "iconPath":"images/cart_un_d.png",
+        "selectedIconPath":"images/cart_d.png"
       },
       {
         "pagePath": "pages/home/home",
-        "text": "首 页"
+        "text": "点 餐",
+        "iconPath": "images/index_un_s.png",
+        "selectedIconPath": "images/index_s.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我 的"
+        "text": "我 的",
+        "iconPath": "images/user_un_s.png",
+        "selectedIconPath": "images/user_s.png"
       }
     ]
   }

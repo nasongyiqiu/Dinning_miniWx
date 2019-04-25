@@ -26,6 +26,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    //这里是我4.25号添加的
+    wx.setNavigationBarTitle({
+      title: '购物车'
+    })
 
   },
 

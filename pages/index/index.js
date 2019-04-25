@@ -48,7 +48,7 @@ Page({
   //这里也是我新加的
   onShow: function () {
     wx.setNavigationBarTitle({
-      title: '我的'
+      title: ''
     })
   }, 
 
@@ -56,7 +56,7 @@ Page({
     // console.log("这里我获取到",e,app.globalData);
     app.globalData.userInfo = e.detail.userInfo;
     wx.switchTab({
-      url: '../user/user',
+      url: '../home/home',
     })
     // app.globalData.userInfo = e.detail.userInfo
     this.setData({
