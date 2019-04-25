@@ -22,11 +22,11 @@ Page({
   },
 
   onLoad: function () {
-console.log(app.globalData.userInfo);
-this.setData({
-  name: app.globalData.userInfo.nickName,
-  avatar: app.globalData.userInfo.avatarUrl
-})
+    console.log(app.globalData.userInfo);
+    this.setData({
+      name: app.globalData.userInfo.nickName,
+      avatar: app.globalData.userInfo.avatarUrl
+    })
     var _this = this;
     app.getOpenid().then(function (res) {
       // console.log(res)
