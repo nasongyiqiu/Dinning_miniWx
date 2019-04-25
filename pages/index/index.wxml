@@ -5,6 +5,22 @@
 		</view>
         <button class="author-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">前往授权</button>
 	</block>
+ <!-- <block wx:else> 
+        <view class="info-box">
+            <view class="flex-box">
+                <image bindtap="toFeedback" class="icon1 feedback flex-item" src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/btn_feedback.png" mode="widthFix"></image>
+                <image src="{{avatar ? avatar : 'http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/avatar_default.png'}}"  model="aspectFill" lazy-load="true" mode="" class="avatar"></image>
+                <image bindtap="toAboutUs" class="icon1 aboutus flex-item" src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/btn_aboutus.png" mode="widthFix"></image>
+                
+            </view>
+            <view class="name">
+                <text>ID:{{id}}</text>
+                <text>  {{name}}</text>
+            </view>
+        </view>  
 
-    
+        
+        <image class="phoneCallBtn" bindtap="phoneCall" src="../../images/iconPhone.png"></image>
+    </block>
+ -->   
 </view>

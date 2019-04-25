@@ -21,12 +21,6 @@ App({
 
                method: 'post',
                success: function (res) {
-                //  console.log('success',res);
-                 that.globalData.openid = res.data.data.openid;
-                //  wx.setStorage({
-                  //  key: '200',
-                  //  data: res.data.data.openid,
-                //  }
                 
                 resolve(res.data);
                }
