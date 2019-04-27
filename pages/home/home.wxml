@@ -1,12 +1,18 @@
 <!--pages/home/home.wxml-->
-
 <view class='topTabSwiper'>
-    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>推荐</view>
-    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>热点</view>
-    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>关注</view>
-</view>
-<swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
-  <swiper-item><view class='swiper_con'>welcome come to 推荐</view></swiper-item> 
-  <swiper-item><view class='swiper_con'>welcome come to 热点</view></swiper-item>
-  <swiper-item><view class='swiper_con'>welcome come to 关注</view></swiper-item>  
+    <view class='tab' wx:for='{{ foodKind }}' wx:key='{{ index }}' data-current="{{item.id-1}}" bindtap='checkCurrent'>{{ item.kindName }}</view>
+
+</view >
+<swiper current="{{currentData}}" duration="300" bindchange="bindchange" style="height:600px;float:left;flex:1">
+  <swiper-item class='swiper' wx:for="{{foodKind}}" wx:key="{{index}}">
+    <view class='food' wx:for='{{foods}}' wx:key="{{index}}">
+      <view class='fooddetail'>
+        <image src='{{item.picture}}'></image>
+        <text class='foodname'>{{item.foodName}}</text>
+        <text class='foodprice'>￥{{item.price}}</text>
+      </view>
+      <button>加入购物车</button>
+    </view>
+  </swiper-item> 
+  
 </swiper>
