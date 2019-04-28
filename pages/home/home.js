@@ -1,4 +1,5 @@
 // pages/home/home.js
+const app = getApp()
 Page({
 
   /**
@@ -7,7 +8,8 @@ Page({
   data: {
     foodKind:[],
     currentData:'',
-    foods:[]
+    foods:[],
+    miniWxId:''
   },
 
   /**
@@ -15,8 +17,9 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
+     //获取菜系
     wx.request({
-      url: 'https://sys.songna.top:9090/api/open/wx/food/kind/list',//获取菜系
+      url: 'https://sys.songna.top:9090/api/open/wx/food/kind/list',
       method:'post',
       data:{},
       success:function(data){
@@ -24,6 +27,8 @@ Page({
         _this.setData({foodKind:data.data.data.result});
       }
     })
+    
+   
     
   },
   //点击切换，滑块index赋值
@@ -57,6 +62,24 @@ Page({
     that.setData({
       currentData:current
     })
+  },
+  addcart:function(e){
+    const _this = this;
+    //获取用户openid
+    app.getOpenid().then(function (res) {
+      // console.log(res.data.openid)
+      _this.setData({ miniWxId: res.data.openid });
+      //加入购物车
+      wx.request({
+        url: 'https://sys.songna.top:9090/api/open/wx/shop/car/add',
+        data: { "miniWxId": res.data.openid, "id": e.target.dataset.foodid, "num": 1 },
+        method: 'post',
+        success: function (data) {
+          console.log(data);
+        }
+      })
+    })
+    
   },
   
   /**
