@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    carts:[]
   },
 
   /**
@@ -24,7 +24,8 @@ Page({
         data: { "miniWxId": res.data.openid },
         method: 'post',
         success: function (data) {
-          console.log(data);
+          console.log(data.data.data.result);
+          _this.setData({carts:data.data.data.result})
         }
       })
     })
