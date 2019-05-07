@@ -6,9 +6,84 @@ Page({
    * 页面的初始数据
    */
   data: {
-    carts:[]
+    carts:[],
+    totalPrice:0
   },
+  count_price() {
+    // 获取商品列表数据
+    let list = this.data.carts;
+    // 声明一个变量接收数组列表price
+    let total = 0;
+    // 循环列表得到每个数据
+    for (let i = 0; i < list.length; i++) {
+      // 判断选中计算价格
+      if (list[i].selected) {
+        // 所有价格加起来 count_money
+        total += list[i].num * list[i].price;
+      }
+    }
+    // 最后赋值到data中渲染到页面
+    this.setData({
+      carts: list,
+      totalPrice: total.toFixed(2)
+    });
+  },
+ btn_minus(e){
+    // console.log(e);
+    var _this = this;
+    const index = e.currentTarget.dataset.index;
+   var id = e.currentTarget.dataset.id;
+    var num = this.data.carts[index].num;
+    if (num <= 1) {
+      return false;
+    }
+    // else  num大于1  点击减按钮  数量--
+    num = num - 1;
+    console.log(num)
+   wx.request({
+     url: 'https://sys.songna.top:9090/api/open/wx/shop/car/update/num',
+     data: { "id": id,num:num },
+     method: 'post',
+     success: function (data) {
+      //  console.log(data);
+       if(data.data.code == 200){
+         var carts = _this.data.carts;
+         carts[index].num = num;
+         _this.setData({ carts: carts })
+       }
+       
+     }
+   })
 
+  },
+  btn_add(e) {
+    // console.log(e);
+    var _this = this;
+    const index = e.currentTarget.dataset.index;
+    var id = e.currentTarget.dataset.id;
+    var num = this.data.carts[index].num;
+    // if (num <= 1) {
+    //   return false;
+    // }
+    // else  num大于1  点击减按钮  数量--
+    num = num + 1;
+    // console.log(num)
+    wx.request({
+      url: 'https://sys.songna.top:9090/api/open/wx/shop/car/update/num',
+      data: { "id": id, num: num },
+      method: 'post',
+      success: function (data) {
+        console.log(data);
+        if (data.data.code == 200) {
+          var carts = _this.data.carts;
+          carts[index].num = num;
+          _this.setData({ carts: carts })
+        }
+
+      }
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -46,6 +121,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '购物车'
     })
+    wx.showToast({
+      title: '加载中',
+      icon: "loading",
+      duration: 1000
+    })
+    this.count_price();
 
   },
 
