@@ -4,12 +4,10 @@
  
   <view wx:if="{{carts}}">
   <!-- 编辑 -->
-  <view class='edit'>
-  <label class='edit_btn' bindtap='btn_edit'>{{edit_name}}</label>
-  </view>
       <!-- 列表 -->
       <checkbox-group bindchange="checkboxChange">
-      <view class="list" wx:for="{{carts}}" wx:key="{{index}}"><checkbox value="{{item.name}}" checked="{{item.checked}}" />
+      <view class="list" wx:for="{{carts}}" wx:key="{{index}}">
+      <checkbox value="{{item.price}},{{item.num}}" checked="{{item.checked}}" />
         <!-- radio选择IOCN -->
         <image class='dele_edit' bindtap='deletes' data-index='{{index}}' style='display:{{edit_show}}' src='../../image/dele.png'></image>
         <image  wx:if="{{item.selected}}"  data-index="{{index}}" class="radio_chek" bindtap="selectList" src='../../image/radio_show.png'></image>

@@ -9,6 +9,23 @@ Page({
     carts:[],
     totalPrice:0
   },
+  //多选框选择按钮
+  checkboxChange(e) {
+    console.log('checkbox发生change事件，携带value值为：', e);
+    var price = [];
+    var num = [];
+    var total = 0;
+    for (var i = 0; i < e.detail.value.length; i++) {
+      var aaa = e.detail.value[i].split(',');
+      price = price.concat(aaa[0]);
+      num = num.concat(aaa[1]);
+    }
+    for(var i = 0;i < price.length;i++){     
+      total += price[i]*num[i]     
+    }
+    console.log(total)
+    this.setData({totalPrice:total})
+  },
   count_price() {
     // 获取商品列表数据
     let list = this.data.carts;
@@ -127,7 +144,17 @@ Page({
       duration: 1000
     })
     this.count_price();
-
+    //加入购物车
+    var _this = this;
+    wx.request({
+      url: 'https://sys.songna.top:9090/api/open/wx/shop/car/list',
+      data: { "miniWxId": _this.data.miniWxId },
+      method: 'post',
+      success: function (data) {
+        console.log(data.data.data.result);
+        _this.setData({ carts: data.data.data.result })
+      }
+    })
   },
 
   /**
