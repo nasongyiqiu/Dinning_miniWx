@@ -146,14 +146,19 @@ Page({
     this.count_price();
     //加入购物车
     var _this = this;
-    wx.request({
-      url: 'https://sys.songna.top:9090/api/open/wx/shop/car/list',
-      data: { "miniWxId": _this.data.miniWxId },
-      method: 'post',
-      success: function (data) {
-        console.log(data.data.data.result);
-        _this.setData({ carts: data.data.data.result })
-      }
+    app.getOpenid().then(function (res) {
+      // console.log(res.data.openid)
+      _this.setData({ miniWxId: res.data.openid });
+      //加入购物车
+      wx.request({
+        url: 'https://sys.songna.top:9090/api/open/wx/shop/car/list',
+        data: { "miniWxId": res.data.openid },
+        method: 'post',
+        success: function (data) {
+          // console.log(data.data.data.result);
+          _this.setData({ carts: data.data.data.result })
+        }
+      })
     })
   },
 

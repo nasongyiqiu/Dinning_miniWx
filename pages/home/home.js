@@ -23,7 +23,7 @@ Page({
       method:'post',
       data:{},
       success:function(data){
-        // console.log(data.data.data.result);
+        console.log(data.data.data.result);
         _this.setData({foodKind:data.data.data.result});
       }
     })
@@ -65,6 +65,7 @@ Page({
   },
   addcart:function(e){
     const _this = this;
+    console.log(e)
     //获取用户openid
     app.getOpenid().then(function (res) {
       // console.log(res.data.openid)

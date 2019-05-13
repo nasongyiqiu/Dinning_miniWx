@@ -12,6 +12,7 @@ Page({
     name: null,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    orderArray:[]
 
   },
   //事件处理函数
@@ -44,7 +45,19 @@ Page({
         })
       }
     })
-
+    wx.request({
+      url: 'https://sys.songna.top:9090/api/private/order/list',
+      data: {
+        "pageSize": 10,
+        "pageIndex": 1 },
+      method: "POST",
+      success(data) {
+        console.log(data)
+        // _this.setData({
+        //   id: data.data.data.id
+        // })
+      }
+    })
 
   },
 
@@ -58,6 +71,17 @@ Page({
 
 
   //以下是4.23新添加的
+  //意见反馈
+  toOrder: function () {
+    wx.navigateTo({
+      url: "../order/order"
+    });
+  },
+  toAppointment(){
+    wx.navigateTo({
+      url: '../appointment/appointment',
+    })
+  },
   toAboutUs: function () {
     wx.navigateTo({
       url: "../aboutUs/aboutUs"

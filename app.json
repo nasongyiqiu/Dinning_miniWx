@@ -4,6 +4,8 @@
     "pages/home/home",
     "pages/logs/logs",
     "pages/cart/cart",
+    "pages/order/order",
+    "pages/appointment/appointment",
     "pages/aboutUs/aboutUs",
     "pages/agreement/agreement",
     "pages/feedback/feedback",
