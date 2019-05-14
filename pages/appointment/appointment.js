@@ -62,11 +62,14 @@ Page({
       method: "post",
       success: function (data) {
         if (data.data.code == 200) {
-          wx.showToast({
-            title: '预约成功',
-          })
-          _this.getList();
-          _this.setData({value:''})
+          setTimeout(function () {
+            wx.showToast({
+              title: '预约成功',
+            })
+            _this.getList();
+            _this.setData({ value: '' })
+          }, 5000)
+         
         }
       }
     })
