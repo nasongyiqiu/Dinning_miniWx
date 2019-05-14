@@ -2,25 +2,29 @@
 
 <wxs module="filter" src="./time.wxs"></wxs>
 <view>
-<input placeholder="请输入预约人数" auto-focus />
-<button size='mini'>预约</button>
+<input placeholder="请输入预约人数" value='{{value}}' auto-focus bindinput="getNumber" />
+<button size='mini' bindtap='addOrder'>预约</button>
 </view>
-<view></view>
+<view style='margin:10px 0'>预约历史记录</view>
 <view class="table" wx:if="{{listData}}">
   <view class="tr bg-w">
-    <view class="th">预约ID</view>
+    <!-- <view class="th">预约ID</view> -->
     <view class="th">预约人数</view>
-    <view class="th ">需等待人数</view>
+    <view class="th">需等待人数</view>
     <view class="th">预约状态</view>
-    <view class="th ">创建时间</view>
+    <view class="th">创建时间</view>
+    <view class="th ">操作</view>
   </view>
   <block wx:for="{{listData}}" wx:key="{{code}}">
     <view class="tr bg-g">
-      <view class="td">{{item.id}}</view>
+      <!-- <view class="td">{{item.id}}</view> -->
       <view class="td">{{item.personNumber}}</view>
       <view class="td">{{item.needWait}}</view>
       <view class="td">{{item.stateDesc}}</view>
       <view class="td">{{filter.format(item.createTime)}}</view>
+      <view class="td" data-id="{{item.id}}" bindtap='deleteOrder'>删除</view>
+
     </view>
   </block>
 </view>
+<view class='list_none' wx:else>还没有预约历史喔~快去预约吧</view>

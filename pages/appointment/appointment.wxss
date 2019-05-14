@@ -34,3 +34,8 @@ input{
   align-items: center;
   font-size: 12px
 }
+.list_none{
+    padding:40rpx 0;
+    color: #999;
+    text-align: center;
+}
