@@ -1,2 +1,23 @@
 <!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+
+<wxs module="filter" src="./time.wxs"></wxs>
+<view class="table" wx:if="{{listData}}">
+  <view class="tr bg-w">
+    <!-- <view class="th">预约ID</view> -->
+    <view class="th">订单ID</view>
+    <view class="th">创建时间</view>
+    <view class="th">金额</view>
+    <view class="th">状态</view>
+    <view class="th ">操作</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{code}}">
+    <view class="tr bg-g">
+      <view class="td" data-id="{{item.id}}" bindtap='orderDetail'>{{item.id}}</view>
+      <view class="td">{{filter.format(item.createTime)}}</view>
+      <view class="td">{{item.amount}}</view>
+      <view class="td">{{item.statusDesc}}</view>
+      <view class="td" data-id="{{item.id}}" bindtap='deleteOrder'>删除</view>
+
+    </view>
+  </block>
+</view>

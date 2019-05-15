@@ -62,13 +62,11 @@ Page({
       method: "post",
       success: function (data) {
         if (data.data.code == 200) {
-          setTimeout(function () {
             wx.showToast({
               title: '预约成功',
             })
-            _this.getList();
+            // _this.getList();
             _this.setData({ value: '' })
-          }, 5000)
          
         }
       }
@@ -88,7 +86,7 @@ Page({
           wx.showToast({
             title: '已取消预约',
           })
-          _this.getList();
+          // _this.getList();
         }
       }
     })
@@ -102,6 +100,10 @@ Page({
       title: '我的预约'
     });
     this.getList();
+    var _this = this;
+    setInterval(function(){
+      _this.getList()
+    },1000)
      
   },
 

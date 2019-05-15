@@ -1,4 +1,4 @@
-// pages/order/order.js
+// pages/orderDetail/orderDetail.js
 const app = getApp()
 Page({
 
@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData:[]
+    id:'',
+    result:{}
   },
   getList: function () {
     var _this = this;
@@ -14,34 +15,30 @@ Page({
       // console.log(res)
       if (res.code == "200") {
         wx.request({
-          url: 'https://sys.songna.top:9090/api/open/wx/order/list',
+          url: 'https://sys.songna.top:9090/api/open/wx/order/list/detail',
           data: {
             "openId": res.data.openid,
+            "id":_this.data.id
           },
           method: "POST",
           success(data) {
-            
+            console.log(data)
             _this.setData({
-              listData: data.data.data.result
+              result: data.data.data
             })
-            console.log(_this.data.listData)
+            // console.log(_this.data.listData)
           }
         })
       }
     })
   },
-  orderDetail:function(e){
-    // console.log(e.currentTarget.dataset.id);
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../orderDetail/orderDetail?id='+id,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // console.log(options.id);
+    this.setData({id:options.id})
   },
 
   /**
@@ -56,9 +53,9 @@ Page({
    */
   onShow: function () {
     wx.setNavigationBarTitle({
-      title: '我的订单'
+      title: '订单详情'
     })
-    this.getList();
+    this.getList()
   },
 
   /**

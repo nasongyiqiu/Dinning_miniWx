@@ -1,0 +1,8 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<text>pages/orderDetail/orderDetail.wxml</text>
+<view>
+<text>订单编号：{{result.id}}</text>
+<text>创建时间：{{result.id}}</text>
+<text>付款时间：{{result.id}}</text>
+<text>金额：{{result.amount}}</text>
+</view>
