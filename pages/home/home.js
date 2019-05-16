@@ -15,7 +15,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options) 
+  {
+    // console.log('000')
     var _this = this;
      //获取菜系
     wx.request({
@@ -23,8 +25,17 @@ Page({
       method:'post',
       data:{},
       success:function(data){
-        console.log(data.data.data.result);
+        // console.log(data.data.data.result);
         _this.setData({foodKind:data.data.data.result});
+        wx.request({
+          url: 'https://sys.songna.top:9090/api/open/wx/food/detail/list',
+          method: 'post',
+          data: { "kindId":  data.data.data.result[0].id },
+          success: function (data) {
+            // console.log(data.data.data.result);
+            _this.setData({ foods: data.data.data.result });
+          }
+        })
       }
     })
     
@@ -48,7 +59,7 @@ Page({
       method: 'post',
       data: { "kindId": fkid},
       success: function (data) {
-        console.log(data.data.data.result);
+        // console.log(data.data.data.result);
         that.setData({ foods: data.data.data.result });
       }
     })

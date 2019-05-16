@@ -45,6 +45,11 @@ Page({
       totalPrice: total.toFixed(2)
     });
   },
+  btn_submit_order(){
+    wx.navigateTo({
+      url: '../order/order',
+    })
+  },
  btn_minus(e){
     // console.log(e);
     var _this = this;

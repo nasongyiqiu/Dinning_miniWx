@@ -9,11 +9,11 @@
       <view class="list" wx:for="{{carts}}" wx:key="{{index}}">
       <checkbox value="{{item.price}},{{item.num}}" checked="{{item.checked}}" />
         <!-- radio选择IOCN -->
-        <image class='dele_edit' bindtap='deletes' data-index='{{index}}' style='display:{{edit_show}}' src='../../image/dele.png'></image>
+        <!-- <image class='dele_edit' bindtap='deletes' data-index='{{index}}' style='display:{{edit_show}}' src='../../image/dele.png'></image> -->
         <image  wx:if="{{item.selected}}"  data-index="{{index}}" class="radio_chek" bindtap="selectList" src='../../image/radio_show.png'></image>
         <!-- <icon wx:else type="circle" class="radio_chek" data-index="{{index}}" bindtap="selectList" /> -->
 <!-- else -->
-                <image wx:else src='../../image/radio_none.png'  class="radio_chek" data-index="{{index}}" bindtap="selectList"></image>
+                <!-- <image wx:else src='../../image/radio_none.png'  class="radio_chek" data-index="{{index}}" bindtap="selectList"></image> -->
         <!-- 列表标题 -->
         <text class="list_name">{{item.foodName}}</text>
         <!-- 列表商品图片 -->
@@ -21,8 +21,8 @@
         <!-- 规格 -->
         <text class="cart_g_name">规格 : {{item.pro}}</text>
         <!-- 收藏 -->
-        <label class='collert' bindtap='btn_collert'>
-          <image class='collert_img'src='../../image/shop_car/collert.png'></image> 收藏</label>
+        <!-- <label class='collert' bindtap='btn_collert'> -->
+          <!-- <image class='collert_img'src='../../image/shop_car/collert.png'></image> 收藏</label> -->
         <!-- 价格 -->
         <text class="list_price">￥{{item.price}}</text>
         <!-- 商品数量加减  style='display:{{show_edit}}'-->
@@ -43,14 +43,14 @@
 <!-- 固定底部 -->
     <view class="cont_bot">
     <!-- 全选ICON -->
-    <image wx:if="{{selectAllStatus}}"  class="total-select" bindtap="selectAll" src='../../image/radio_show.png'></image>
+    <!-- <image wx:if="{{selectAllStatus}}"  class="total-select" bindtap="selectAll" src='../../image/radio_show.png'></image>
  
       <!-- <icon wx:if="{{selectAllStatus}}" type="success_circle" color="#999" class="total-select" bindtap="selectAll" /> -->
       <!-- else -->
-          <image  wx:else  class="total-select" bindtap="selectAll"src='../../image/radio_none.png'></image>
+          <!-- <image  wx:else  class="total-select" bindtap="selectAll"src='../../image/radio_none.png'></image> -->
       <!-- <icon wx:else type="circle" color="#999" class="total-select" bindtap="selectAll" /> -->
          <!-- 全选标题 -->
-      <text class='sel_count_name'>全选</text>
+      <!-- <text class='sel_count_name'>全选</text> -->
       <!-- 合计金额 -->
       <lable class="count_price">合计：<text>￥{{totalPrice}}</text></lable>
       <!-- 提交订单 -->
