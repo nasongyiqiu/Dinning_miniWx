@@ -7,7 +7,8 @@ Page({
    */
   data: {
     id:'',
-    result:{}
+    result:{},
+    detail:[]
   },
   getList: function () {
     var _this = this;
@@ -24,7 +25,7 @@ Page({
           success(data) {
             console.log(data)
             _this.setData({
-              result: data.data.data
+              result: data.data.data, detail: data.data.data.orderDetailDTOs
             })
             // console.log(_this.data.listData)
           }

@@ -1,8 +1,24 @@
 <!--pages/orderDetail/orderDetail.wxml-->
-<text>pages/orderDetail/orderDetail.wxml</text>
+
 <view>
 <text>订单编号：{{result.id}}</text>
 <text>创建时间：{{result.id}}</text>
 <text>付款时间：{{result.id}}</text>
 <text>金额：{{result.amount}}</text>
 </view>
+<view class="tr bg-w">
+    <!-- <view class="th">预约ID</view> -->
+    <view class="th">订单ID</view>
+    <view class="th">菜名</view>
+    <view class="th">数量</view>
+    <view class="th">图片</view>
+  </view>
+<block wx:for="{{detail}}" wx:key="{{code}}">
+    <view class="tr bg-g">
+      <view class="td">{{item.orderId}}</view>
+      <view class="td">{{item.foodName}}</view>
+      <view class="td">{{item.amount}}</view>
+      <view class="td"><image src='{{item.picture}}'></image></view>
+
+    </view>
+  </block>

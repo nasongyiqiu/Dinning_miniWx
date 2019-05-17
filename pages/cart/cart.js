@@ -7,24 +7,32 @@ Page({
    */
   data: {
     carts:[],
-    totalPrice:0
+    totalPrice:0,
+    miniWxId:'',
+    ids:[]
   },
   //多选框选择按钮
   checkboxChange(e) {
     console.log('checkbox发生change事件，携带value值为：', e);
     var price = [];
     var num = [];
+    var ids = [];
     var total = 0;
     for (var i = 0; i < e.detail.value.length; i++) {
       var aaa = e.detail.value[i].split(',');
       price = price.concat(aaa[0]);
       num = num.concat(aaa[1]);
+      for(var i = 0 ; i < num; i ++){
+        ids.push(aaa[2])
+      }
+      // ids = ids.concat(aaa[2]);
     }
     for(var i = 0;i < price.length;i++){     
       total += price[i]*num[i]     
     }
     console.log(total)
-    this.setData({totalPrice:total})
+    this.setData({totalPrice:total});
+    this.setData({ids:ids});
   },
   count_price() {
     // 获取商品列表数据
@@ -46,9 +54,25 @@ Page({
     });
   },
   btn_submit_order(){
-    wx.navigateTo({
-      url: '../order/order',
+    console.log(this.data.ids);
+    var _this = this;
+    wx.request({
+      url: 'https://sys.songna.top:9090/api/open/wx/order/add',
+      data:{
+        'foodIds':_this.data.ids,
+        'openId': _this.data.miniWxId
+      },
+      method:'post',
+      success:function(data){
+        console.log(data);
+        if(data.data.code == 200){
+           wx.navigateTo({
+            url: '../order/order',
+          })
+        }
+      }
     })
+    
   },
  btn_minus(e){
     // console.log(e);
