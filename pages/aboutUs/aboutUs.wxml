@@ -1,7 +1,8 @@
 <view class="container">
 	<view class="top-box">
 		<image src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/bg_blue_aboutus.png" mode="widthFix"></image>
-		<image class="logo" src="http://tp-app.oss-cn-hangzhou.aliyuncs.com/ios/logo_darkblue.png"></image>
+		<image class="logo" 
+    src="http://hpu-admin.oss-cn-shanghai.aliyuncs.com//ios/1557408398549_hyw.jpeg"></image>
 		<view class="text">好韵味</view>
 	</view>
 	
