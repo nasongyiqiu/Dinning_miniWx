@@ -10,7 +10,7 @@
         <image src='{{item.picture}}'></image>
         <view class='intro'>
         <text class='foodname'>{{item.foodName}}</text>
-        <text class='foodprice'>￥{{item.price}}</text></view>
+        <text class='foodprice'>￥{{item.price/100}}</text></view>
         
       </view>
       <button data-foodid="{{item.id}}" bindtap='addcart'>加入购物车</button>

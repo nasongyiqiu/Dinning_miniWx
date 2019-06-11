@@ -31,7 +31,7 @@ Page({
       total += price[i]*num[i]     
     }
     console.log(total)
-    this.setData({totalPrice:total});
+    this.setData({totalPrice:total/100});
     this.setData({ids:ids});
   },
   count_price() {

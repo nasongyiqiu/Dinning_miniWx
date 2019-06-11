@@ -14,12 +14,12 @@ page {
 	height: 100%;
 	background-color: #FFFFFF;
 } */
-.content-notice {
+ .content-notice {
 	margin-top: 450rpx;
 	font-size: 26rpx;
 	color: #666;
 	text-align: center;
-}
+} 
 .author-btn {
 	margin: 30rpx auto;
 	width: 200rpx;

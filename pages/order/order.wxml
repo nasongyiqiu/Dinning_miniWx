@@ -14,7 +14,7 @@
     <view class="tr bg-g">
       <view class="td" data-id="{{item.id}}" bindtap='orderDetail'>{{item.id}}</view>
       <view class="td">{{filter.format(item.createTime)}}</view>
-      <view class="td">{{item.amount}}</view>
+      <view class="td">{{item.amount/100}}</view>
       <view class="td">{{item.statusDesc}}</view>
       <view class="td" data-id="{{item.id}}" bindtap='deleteOrder'>删除</view>
 
