@@ -21,11 +21,11 @@ Page({
      */
     onLoad: function (options) {
         let that = this
-        let orderId = JSON.parse(options.orderId)
-        console.log(orderId)
-        if (orderId > 0) {
+        let userId = JSON.parse(options.userId)
+        console.log(userId)
+        if (userId > 0) {
             this.setData({
-                orderId: orderId,
+                userId: userId,
             })
         }
 
@@ -137,35 +137,50 @@ Page({
                 duration: 1000  
             })
         } else {
-            wx.showLoading({
-                title:'提交反馈',
-                mask:true,
-            })
-
-            netManager.submitFeedback(feedback,
-                function(res){
-                    console.log('success',res)
-                    wx.hideLoading()
-                    wx.showToast({
-                        title:'提交成功',
-                        icon:'success',
-                        duration:2000,
-                        complete: function(){
-                            wx.navigateBack()
-                        }
-                    })
-                },
-                function(error){
-                    console.log('fail',error)
-                    wx.hideLoading()
-                    wx.showToast({
-                        title: error,
-                        image: './icon_fail.png',
-                        // icon:'none',
-                        duration:1000
-                    }) 
-                }
-            )
+            
+            var _this=this;
+            console.log(this.data.userId,this.data.type,this.data.msg,this.data.phone)
+          wx.request({
+            url: 'https://sys.songna.top:9090/api/open/wx/advice/add',
+            data: {
+              "userId": _this.data.userId,
+              "type": _this.data.type,
+              "phone": _this.data.phone,
+              "msg": _this.data.msg
+            },
+            method: "POST",
+            success(data) {
+              console.log(data);
+              wx.showToast({
+                title: '提交成功',
+                mask: true,
+              })
+            }
+          })
+            // netManager.submitFeedback(feedback,
+            //     function(res){
+            //         console.log('success',res)
+            //         wx.hideLoading()
+            //         wx.showToast({
+            //             title:'提交成功',
+            //             icon:'success',
+            //             duration:2000,
+            //             complete: function(){
+            //                 wx.navigateBack()
+            //             }
+            //         })
+            //     },
+            //     function(error){
+            //         console.log('fail',error)
+            //         wx.hideLoading()
+            //         wx.showToast({
+            //             title: error,
+            //             image: './icon_fail.png',
+            //             // icon:'none',
+            //             duration:1000
+            //         }) 
+            //     }
+            // )
         }
 
     },

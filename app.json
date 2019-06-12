@@ -5,6 +5,7 @@
     "pages/logs/logs",
     "pages/cart/cart",
     "pages/order/order",
+    "pages/orderConfirm/orderConfirm",
     "pages/orderDetail/orderDetail",
     "pages/appointment/appointment",
     "pages/aboutUs/aboutUs",

@@ -90,7 +90,7 @@ Page({
   //意见反馈
   toFeedback: function () {
     wx.navigateTo({
-      url: "../feedback/feedback?orderId=0"
+      url: "../feedback/feedback?userId="+this.data.id
     });
   },
   //协议

@@ -16,8 +16,11 @@
       <view class="td">{{filter.format(item.createTime)}}</view>
       <view class="td">{{item.amount/100}}</view>
       <view class="td">{{item.statusDesc}}</view>
-      <view class="td" data-id="{{item.id}}" bindtap='deleteOrder'>删除</view>
+      <view class="td" data-id="{{item.id}}" bindtap='orderDetail'>查看订单</view>
 
     </view>
   </block>
 </view>
+ <view wx:else>
+    <view class="list_none">还没有订单哦~快去下单吧</view>
+  </view>

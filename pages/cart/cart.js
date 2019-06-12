@@ -16,21 +16,29 @@ Page({
     console.log('checkbox发生change事件，携带value值为：', e);
     var price = [];
     var num = [];
+    var nums = [];
     var ids = [];
     var total = 0;
-    for (var i = 0; i < e.detail.value.length; i++) {
+    for (var i in e.detail.value) {
       var aaa = e.detail.value[i].split(',');
+      // console.log(aaa)
       price = price.concat(aaa[0]);
-      num = num.concat(aaa[1]);
-      for(var i = 0 ; i < num; i ++){
-        ids.push(aaa[2])
+      num = aaa[1];
+      nums = nums.concat(aaa[1]);
+      console.log(num,'num');
+      for(var i =0;i<num;i++){
+        // console.log(i)
+        ids.push(Number(aaa[2]))
+        // ids = ids.concat(aaa[2]);
+        // console.log(ids,'[[[')
       }
-      // ids = ids.concat(aaa[2]);
+      // ids = ids.concat(ids);
     }
-    for(var i = 0;i < price.length;i++){     
-      total += price[i]*num[i]     
+    console.log(ids)
+    for(var i in price){     
+      total += price[i]*nums[i]     
     }
-    console.log(total)
+    
     this.setData({totalPrice:total/100});
     this.setData({ids:ids});
   },
@@ -64,10 +72,10 @@ Page({
       },
       method:'post',
       success:function(data){
-        console.log(data);
+        console.log(data.data.data.id);
         if(data.data.code == 200){
            wx.navigateTo({
-            url: '../order/order',
+             url: '../orderConfirm/orderConfirm?id=' + data.data.data.id,
           })
         }
       }

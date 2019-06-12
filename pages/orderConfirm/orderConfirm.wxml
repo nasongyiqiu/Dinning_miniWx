@@ -1,0 +1,30 @@
+<!--pages/orderConfirm/orderConfirm.wxml-->
+
+<view>
+<text>订单编号：{{order.id}}</text>
+
+</view>
+<!-- <view class="tr bg-w">
+    <view class="th">预约ID</view>
+    <view class="th">订单ID</view>
+    <view class="th">菜名</view>
+    <view class="th">数量</view>
+    <view class="th">图片</view>
+  </view> -->
+<block>
+    <view class='food' wx:for="{{order.orderDetailDTOs}}" wx:key="{{code}}">
+      <view class='fooddetail'>
+        <image src='{{item.picture}}'></image>
+        <text class='foodname'>{{item.foodName}}</text>
+        <view class='intro'>
+           <text class='foodprice'>￥{{item.price/100}}</text>
+          <text class='foodprice'>×{{item.amount}}</text>
+        </view>
+       
+      </view> 
+    </view>
+</block>
+  <view class='footer'>
+  共{{order.orderDetailDTOs.length}}件,合计：￥{{order.amount/100}}
+  <button bindtap='btn_submit_order' size='mini'>确认订单</button>
+  </view>

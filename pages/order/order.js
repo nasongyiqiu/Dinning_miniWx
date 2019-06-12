@@ -37,6 +37,22 @@ Page({
       url: '../orderDetail/orderDetail?id='+id,
     })
   },
+  deleteOrder:function(){
+    // wx.request({
+    //   url: 'https://sys.songna.top:9090/api/open/wx/order/list',
+    //   data: {
+    //     "openId": res.data.openid,
+    //   },
+    //   method: "POST",
+    //   success(data) {
+
+    //     _this.setData({
+    //       listData: data.data.data.result
+    //     })
+    //     console.log(_this.data.listData)
+    //   }
+    // })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

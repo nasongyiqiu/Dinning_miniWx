@@ -4,7 +4,7 @@
 <text>订单编号：{{result.id}}</text>
 <text>创建时间：{{result.id}}</text>
 <text>付款时间：{{result.id}}</text>
-<text>金额：{{result.amount}}</text>
+<text>金额：{{result.amount/100}}</text>
 </view>
 <view class="tr bg-w">
     <!-- <view class="th">预约ID</view> -->
