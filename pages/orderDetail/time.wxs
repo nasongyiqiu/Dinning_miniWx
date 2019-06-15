@@ -1,0 +1,9 @@
+var filter = {
+  format: function (value) {
+    return value.substring(0, 10)
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  format: filter.format
+}

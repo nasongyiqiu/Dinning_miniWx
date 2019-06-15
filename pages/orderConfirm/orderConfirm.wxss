@@ -79,6 +79,84 @@ image{
   height: 150px
 }
 .footer{
+  position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 104rpx;
+    line-height:104rpx;
+    background: #fff;
+    border-top: 2rpx solid #ebebeb;
+}
+/* 列表 */
+.list{
+    position: relative;
+   width: 100%;
+    height: 185rpx;
+    /* background-color: red; */
+    border-bottom: 1rpx solid #e9e9e9;
+}
+/* 列表商品图片 */
+.list_img{
+    position: absolute;
+    top: 20rpx;
+    left: 100rpx;
+    width: 144rpx;
+    height: 144rpx;
+}
+/* 列表规格 */
+.cart_g_name{
   position: absolute;
-  bottom: 0;
+  left: 280rpx;
+  font-size: 26rpx;
+  color: #aaa;
+  top: 75rpx;
+}
+/* 列表商品名称 */
+.list_name{
+  position: absolute;
+  left: 280rpx;
+  top: 30rpx;
+  width: 300rpx;
+  /* background-color: red; */
+    font-size: 30rpx;
+    overflow: hidden;    
+text-overflow:ellipsis;    
+white-space: nowrap;
+}
+/* 列表商品价格 */
+ .list_price{
+position: absolute;
+font-size: 32rpx;
+color:  #D66058;
+left: 280rpx;
+bottom: 20rpx;
+}
+ .foodnum{
+   position:absolute;
+   font-size: 34rpx;
+   right: 80rpx;
+   bottom:60rpx
+ }
+/* 合计金额 */
+.count_price{
+ position: absolute;
+ font-size:28rpx;
+ left: 120rpx;
+ color: #aaa;
+}
+.count_price text{
+  font-size: 34rpx;
+  color: #D66058;
+}
+/* 提交 */
+.submit{
+position: absolute;
+width: 232rpx;
+height: 104rpx;
+line-height: 104rpx;
+right: 0rpx;
+font-size: 30rpx;
+text-align: center;
+color:#fff;
+background-color:#495A8F;
 }

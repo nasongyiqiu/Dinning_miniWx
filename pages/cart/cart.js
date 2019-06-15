@@ -192,8 +192,13 @@ Page({
         data: { "miniWxId": res.data.openid },
         method: 'post',
         success: function (data) {
-          // console.log(data.data.data.result);
-          _this.setData({ carts: data.data.data.result })
+          console.log(data.data.data.result);
+          if (data.data.data.result!=null){
+            _this.setData({ carts: data.data.data.result });
+          }else{
+            _this.setData({carts:[]});
+          }
+         
         }
       })
     })

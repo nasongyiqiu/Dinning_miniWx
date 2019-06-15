@@ -12,7 +12,22 @@
     <view class="th">图片</view>
   </view> -->
 <block>
-    <view class='food' wx:for="{{order.orderDetailDTOs}}" wx:key="{{code}}">
+<view class="list" wx:for="{{order.orderDetailDTOs}}" wx:key="{{index}}">
+        <!-- 列表标题 -->
+        <text class="list_name">{{item.foodName}}</text>
+        <!-- 列表商品图片 -->
+        <image class="list_img" src="{{item.picture}}"></image>
+        <!-- 规格 -->
+        <text class="cart_g_name">规格 : {{item.pro}}</text>
+      
+        <text class="list_price">￥{{item.price/100}}</text>
+        <!-- 商品数量加减  style='display:{{show_edit}}'-->
+        
+          <!--减按钮  -->
+          <text class='foodnum'>×{{item.amount}}</text>
+        
+    </view>
+    <!-- <view class='food' wx:for="{{order.orderDetailDTOs}}" wx:key="{{code}}">
       <view class='fooddetail'>
         <image src='{{item.picture}}'></image>
         <text class='foodname'>{{item.foodName}}</text>
@@ -22,9 +37,13 @@
         </view>
        
       </view> 
-    </view>
+    </view> -->
 </block>
   <view class='footer'>
-  共{{order.orderDetailDTOs.length}}件,合计：￥{{order.amount/100}}
-  <button bindtap='btn_submit_order' size='mini'>确认订单</button>
+   <!-- 合计金额 -->
+      <lable class="count_price">共{{order.orderDetailDTOs.length}}件,合计：￥{{order.amount/100}}</lable>
+      <!-- 提交订单 -->
+      <label class='submit' bindtap='btn_submit_order'>确认订单</label>
+      
+  
   </view>
