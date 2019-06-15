@@ -2,8 +2,9 @@
 
 <view>
 <text>订单编号：{{result.id}}</text>
-<text>创建时间：{{result.id}}</text>
-<text>付款时间：{{result.id}}</text>
+<text>订单状态：{{result.statusDesc}}</text>
+<text>创建时间：{{result.createTime}}</text>
+<text>付款时间：{{result.payTime}}</text>
 <text>金额：{{result.amount/100}}</text>
 </view>
 <view class="tr bg-w">

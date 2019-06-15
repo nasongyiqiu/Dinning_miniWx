@@ -13,7 +13,7 @@
         <text class='foodprice'>￥{{item.price/100}}</text></view>
         
       </view>
-      <button data-foodid="{{item.id}}" bindtap='addcart'>加入购物车</button>
+      <button data-foodid="{{item.id}}" bindtap='addcart' ></button>
     </view>
   </swiper-item> 
   

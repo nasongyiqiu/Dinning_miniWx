@@ -31,9 +31,15 @@ page{
 color:  #D66058;
 }
 .food button{
+ /* background-image: url("../../images/add_car.png"); */
+ background:url(http://hpu-admin.oss-cn-shanghai.aliyuncs.com//ios/1560568423671_add_car.png) no-repeat center;
+background-size:70rpx;
+/* border: none; */
+border-radius: 50%;
   display: inline-block;
   height: 70rpx;
-  margin: auto;
+  margin-top: 15px;
+  margin-right: 30px;
   font-size: 26rpx
 }
 .intro{

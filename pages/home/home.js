@@ -88,6 +88,9 @@ Page({
         method: 'post',
         success: function (data) {
           console.log(data);
+          wx.showToast({
+            title: '添加购物车成功',
+          })
         }
       })
     })

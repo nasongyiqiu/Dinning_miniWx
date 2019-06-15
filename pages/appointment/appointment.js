@@ -84,7 +84,7 @@ Page({
       success:function(data){
         if(data.data.code == 200){
           wx.showToast({
-            title: '已取消预约',
+            title: '删除该预约',
           })
           // _this.getList();
         }
