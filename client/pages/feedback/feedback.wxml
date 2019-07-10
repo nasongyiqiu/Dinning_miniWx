@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="tip">
+        <text>建议类型</text>
+    </view>
+    <view class="ipt" bindtap="chooseType">
+        <text><block wx:if="{{type == null}}">请选择建议类型</block><block wx:else>{{typeDesc}}</block></text>
+        <image></image>
+    </view>
+    <view class="tip">
+        <text>联系方式</text>
+    </view>
+    <view class="ipt">
+        <input type="number" placeholder="请输入联系电话" bindconfirm="checkPhone" bindblur="checkPhone" />
+    </view>
+    <view class="tip">
+        <text>请填写您的宝贵意见</text>
+    </view>
+    <view class="ipt b-ipt">
+        <textarea placeholder="" bindblur="updateMsg" bindconfirm="updateMsg" />
+    </view>
+
+    <!-- <view class="tip">
+        <text>上传照片(可不传)</text>
+    </view>
+    <view class="upload-ipt"> + </view> -->
+
+    
+    <block>
+        <view wx:if="{{enableSubmit == true}}" class="btn blue" bindtap="submit">
+            提交反馈
+        </view>
+        <view wx:else class="btn">
+            提交反馈
+        </view>
+    </block>
+
+    <!-- 点击拨打客服电话 -->
+    <image class="phoneCallBtn" bindtap="phoneCall" src="../../images/iconPhone.png"></image>
+</view>

@@ -44,20 +44,22 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/user/user",
+					"query": "",
 					"scene": null
 				},
-        {
-          "id": -1,
-          "name": "关于我们",
-          "pathName": "pages/aboutUs/aboutUs",
-          "query": ""
-        },
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/aboutUs/aboutUs",
+					"query": "",
+					"scene": null
+				}
 			]
 		}
 	}

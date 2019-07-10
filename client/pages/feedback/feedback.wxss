@@ -1,0 +1,88 @@
+page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.container {
+	/* position:  relative; */
+	width: 100%;
+	height: 100vh;
+    background: #fff;
+    align-items: left;
+    /* padding-top: 20rpx; */
+}
+.tip {
+    margin:0 50rpx;
+    width: 650rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 30rpx;
+    color: #00233C;
+}
+.ipt {
+    margin: 0 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 650rpx;
+    padding: 0 20rpx;
+    font-size: 34rpx;
+    color: #00203C;
+    background-color: #F8F8F8;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+.ipt textarea {
+    height: 160rpx;
+    padding: 20rpx;
+}
+.ipt input {
+    width: 100%;
+    height: 100%;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    padding: 0 10rpx;
+}
+.container .b-ipt {
+    height: 200rpx;
+}
+
+.upload-ipt {
+    width: 100rpx;
+    height: 100rpx;
+    background: #f8f8f8;
+    text-align: center;
+    line-height: 100rpx;
+    color: #999;
+    border-radius: 10rpx;
+    margin: 0 30rpx;
+}
+
+
+
+.btn {
+    position: fixed;
+    left: 0;
+    bottom: 48rpx;
+    width: 690rpx;
+    margin: 0 30rpx;
+    background-color: #F8F8F8;
+    text-align: center;
+    font-size: 36rpx;
+    line-height: 90rpx;
+    height: 90rpx;
+    border-radius: 70rpx;
+    overflow: hidden;
+}
+.container .blue {
+    background-color: #1E70E9;
+    color: #ffffff;
+    box-shadow: 0 6rpx 30rpx #2f7ef2;
+}
+
+.phone {
+    width: 100rpx;
+    height: 100rpx;
+    position: fixed;
+    bottom: 300rpx;
+    right: 50rpx;
+}
